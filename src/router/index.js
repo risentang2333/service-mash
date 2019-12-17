@@ -5,11 +5,11 @@ import ServiceEditor from '@/pages/index/ServiceEditor'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'ServiceEditor',
-      component: ServiceEditor
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'ServiceEditor',
+            component: ServiceEditor
+        }
+    ]
 })

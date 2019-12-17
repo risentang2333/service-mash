@@ -17,14 +17,14 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    store,
+    components: { App },
+    template: '<App/>'
 })
 
 store.dispatch('common/updateHeight', document.documentElement['clientHeight'])
 window.onresize = () => {
-  store.dispatch('common/updateHeight', document.documentElement['clientHeight'])
+    store.dispatch('common/updateHeight', document.documentElement['clientHeight'])
 }
