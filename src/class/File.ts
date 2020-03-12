@@ -36,7 +36,7 @@ export class File{
     //将数据保存成json文件
     saveJSON(){
         var {width, height} = this
-        
+
         var nodeList = this.nodeList.map(element => {
             return {
                 id: element.id,
@@ -46,7 +46,7 @@ export class File{
                 position: element.position,
             }
         });
-        
+
         var lineList = this.lineList.map(element => {
             return {
                 id: element.id,
@@ -55,7 +55,7 @@ export class File{
                 centerPoints: element.centerPoints
             }
         });
-        
+
         return JSON.stringify({
             width, height,
             nodeList, lineList
@@ -81,13 +81,13 @@ export class File{
             return _node
         })
         this.lineList = lineList.map(line=>{
-            var _line = new Line(line.id, 
-                idNodeMap[line.startNodeId], 
+            var _line = new Line(line.id,
+                idNodeMap[line.startNodeId],
                 idNodeMap[line.endNodeId],
                 line.centerPoints.map(point=>new Position(point.x, point.y))
             )
             return _line
         })
-        
+
     }
 }

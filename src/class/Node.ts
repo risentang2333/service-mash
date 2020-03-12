@@ -1,26 +1,36 @@
-import {Line} from './Line'
 import {Position} from './Position'
-
-export class Node{
-    id:number
-    ip:string
-    name:string
-    describe:string
-    position:Position
+/**
+ * 节点类
+ * @class Node
+ */
+export class Node {
+    // 节点id
+    id: number
+    // 节点ip
+    ip: string
+    // 节点名
+    name: string
+    // 节点描述
+    describe: string
+    // 节点类型
+    position: Position
+    // 节点高度
     height: number
+    // 节点宽度
     width: number
+    // 背景图片
     image: string
+    // 节点类型
     kind: string = ''
-
+    // 构造
     constructor(id = Date.now(), position: {x: number, y: number}={x: 0, y: 0}){
         this.id = id
         this.position = new Position(position.x, position.y)
         this.height = 60
         this.width = 60
         this.image = '';
-        this.describe = '描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述'
+        this.describe = '节点描述'
     }
-
     //通过当前原型克隆数据
     clone(): Node{
         const node = new Node(this.id, this.position)

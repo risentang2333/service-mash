@@ -1,6 +1,10 @@
 <template>
     <table-component>
-        <div slot="header"></div>
+        <template slot="header">
+        </template>
+        <template slot="aside">
+            <ControlList></ControlList>
+        </template>
         <template slot="main">
             <div class="editbox-edit-panel" :style="{'min-width': (width + 40)+ 'px', 'min-height': (height +40) + 'px'}" @contextmenu.prevent>
                 <div class="editbox-page" :style="{'min-width': width + 'px', 'width': width + 'px', 'min-height': height + 'px', 'height': height + 'px'}">
@@ -11,6 +15,7 @@
 </template>
 
 <script>
+import ControlList from '../../components/ControlList'
 export default {
     name: 'ServiceEditor',
     data () {
@@ -19,10 +24,16 @@ export default {
             height: 800
         }
     },
+    components: {
+        ControlList
+    },
     computed: {
         siteTableViewHeight: {
             get () { return this.$store.state.common.tableHeight }
         }
+    },
+    mounted() {
+        console.log(this.$store)
     }
 }
 </script>
